@@ -4,17 +4,17 @@
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main(int argc, char *argv[]) {
-	int x;
+	char c;
+	int num =0;
 	
-	printf("정수 하나를 입력하시오 : ");
-	scanf("%d",&x);
+	printf("문자열을 입력하세요 : ");
 	
-	if (x > 0)
-		printf("절댓값은 %d입니다.",x);
-	else if (x < 0)
-		printf("절댓값은 %d입니다.\n",-1*x);
-	else
-		printf("0입니다.\n");
-	 	
-	return 0;
+	while ( (c=getchar() )!='\n' ) //입력 문자가 개행문자가 나올 때까지 반복 
+	{
+		if (c >= '0' && c <='9') // 입력된 글자가 숫자인가?
+			num=num+1; //그렇다면 하나를 센다. 
+	} 	
+	
+	printf("The result is %d\n",num);
+	
 }
