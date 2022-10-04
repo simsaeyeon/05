@@ -4,16 +4,22 @@
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main(int argc, char *argv[]) {
-	int sum=0;
-	int x;
-	int i;
+
+	int x,y;
+	int result;
+	char op;
 	
-	printf("input a number :");
-	scanf("%d",&x);
+	printf("enter the calculation :");
+	scanf("%d %c %d",&x,&op,&y);
 	
-	//for문을 활용해서 1부터 x까지 xum에 더하는 코드 
-	for (i=0;i<=x;i++) // 반복 (초기식;조건식;증감식) 
-		sum=sum+i;
-		
-	printf("The result is %d\n",sum); //결과 출력 
+	if (op=='+') //+인 경우 
+		result= x + y;
+	else if (op=='-') //-인 경우 
+		result=x - y;
+	else if (op=='*') //*인 경우 
+		result=x * y;
+	else if (op=='/') ///인 경우 
+		result=x / y;
+			
+	printf("= %d\n",result);
 }
